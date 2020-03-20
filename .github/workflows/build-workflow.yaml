@@ -1,8 +1,8 @@
 name: Build
 on: [push, pull_request]
 jobs:
-  build_duk:
-    name: Duk
+  build_duk_ubuntu:
+    name: Duk Ubuntu 18.04
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout code
@@ -16,3 +16,13 @@ jobs:
       - name: Test
         run: |
           ./duk dist-files/mandel.js
+  build_duk_windows:
+    name: Duk VS2019 Enterprise
+    runs-on: windows-2019
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build
+        run: |
+          echo FIXME
+          cl /?
